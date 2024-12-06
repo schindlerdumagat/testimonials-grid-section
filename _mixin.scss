@@ -1,0 +1,58 @@
+@use 'base';
+
+@mixin card(
+    $bgColor: white,
+    $avatar-border-color: white,
+    $name-color: white,
+    $status-color: white,
+    $title-color: white,
+    $review-color: white
+    ) {
+    background-color: $bgColor;
+    border-radius: 8px;
+    box-shadow: 40px 60px 50px -47px rgba(base.$font-color-dark-grayish-blue, 24.74%);
+    padding: 26px 32px 32px;
+
+    .author-details {
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        height: 1.75rem;
+        margin-bottom: 18px;
+        position: relative;
+
+        img {
+            border-radius: 50%;
+            border: 2px solid $avatar-border-color;
+            height: 100%;
+        }
+
+        .name {
+            color: $name-color;
+            font-weight: base.$font-weight-medium;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+    
+        .status {
+            color: rgba($status-color, base.$status-opacity);
+            font-size: 0.688rem;
+            font-weight: base.$font-weight-medium;
+            line-height: 1;
+        }
+    }
+
+    h1 {
+        color: $title-color;
+        font-size: 1.25rem;
+        font-weight: base.$font-weight-semibold;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    blockquote {
+        font-size: base.$font-weight-medium;
+        line-height: 18px;
+        color: rgba($review-color, base.$review-opacity);
+    }
+}
