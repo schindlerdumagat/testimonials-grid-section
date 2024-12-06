@@ -2,13 +2,15 @@
 @use 'mixin';
 
 main {
+    height: 90%;
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
-    margin: 71px 24px;
     gap: 24px;
 
     @media screen and (min-width: 64rem) {
+        height: unset;
         grid-template-columns: repeat(4, fit-content(15.938rem));
         grid-template-rows: repeat(2, 1fr);
         gap: 30px;
