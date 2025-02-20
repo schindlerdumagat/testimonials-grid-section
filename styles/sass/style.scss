@@ -1,0 +1,119 @@
+@use 'reset' as *;
+@use 'variables' as *;
+
+body {
+    font-family: $ff-main;
+    font-weight: 500;
+    font-size: $fs-body;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background-color: $nc-light-gray;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 1.875rem);
+    max-width: 69.375rem;
+
+    @media screen and (min-width: 48rem) {
+        grid-template-columns: repeat(3, 1fr);
+
+        &__item:first-child, &__item:nth-of-type(4) {
+            grid-column: span 2;
+        }
+
+        &__item:nth-of-type(5) {
+            grid-column: span 3;
+        }
+    }
+
+    @media screen and (min-width: 64rem) {
+        grid-template-columns: repeat(4, 1fr);
+
+        &__item:nth-of-type(5) {
+            grid-row: 1 / span 2;
+            grid-column: 4;
+        }
+    }
+
+}
+
+.card {
+    border-radius: $rounded-sm;
+    box-shadow: $shadow-sm;
+    position: relative;
+    color: $pc-grayish-blue;
+    background-color: $pc-white;
+    padding: 1.625rem 2rem;
+
+    &__author {
+        display: flex;
+        gap: 17px;
+        line-height: 1;
+        height: 1.75rem;
+        margin-bottom: 1.125rem;
+    }
+
+    &__name {
+        margin-bottom: 4px;
+    }
+
+    &__status {
+        font-size: 0.688rem;
+        opacity: 50%;
+    }
+
+    &__img {
+        border-radius: 50%;
+    }
+
+    &__img--bordered {
+        border: 2px solid $pc-violet-secondary;   
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    &__quote {
+        line-height: 1.38;
+        opacity: 70%;
+    }
+
+    &:first-child {
+        background-color: $pc-violet;
+        color: $pc-white;
+    }
+
+    &:first-child::before {
+        content: url("/images/bg-pattern-quotation.svg");
+        position: absolute;
+        top: 0;
+        right: 10%;
+    }
+
+    &:first-child > &__quote {
+        color: $nc-light-gray;
+    }
+
+    &:nth-of-type(2) {
+        background-color: $pc-grayish-blue;
+        color: $pc-white;
+    }
+
+    &:nth-of-type(4) {
+        background-color: $pc-blackish-blue;
+        color: $pc-white;
+    }
+
+    &:nth-of-type(4) > &__title {
+        color: $nc-light-grayish-blue;
+    }
+}
