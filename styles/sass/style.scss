@@ -93,7 +93,7 @@ h1, h2, h3 {
     }
 
     &:first-child::before {
-        content: url("images/bg-pattern-quotation.svg");
+        content: url("/images/bg-pattern-quotation.svg");
         position: absolute;
         top: 0;
         right: 10%;
