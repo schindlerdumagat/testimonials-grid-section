@@ -166,10 +166,7 @@ h1, h2, h3 {
   z-index: 0;
 }
 .card:first-child::before {
-  content: "";
-  background: url("../../images/bg-pattern-quotation.svg") no-repeat;
-  width: 6.5rem;
-  height: 6.5rem;
+  content: url("../../images/bg-pattern-quotation.svg");
   position: absolute;
   top: 0;
   right: 10%;
