@@ -167,7 +167,7 @@ h1, h2, h3 {
 }
 .card:first-child::before {
   content: "";
-  background: url("/images/bg-pattern-quotation.svg") no-repeat;
+  background: url("../../images/bg-pattern-quotation.svg") no-repeat;
   width: 6.5rem;
   height: 6.5rem;
   position: absolute;
