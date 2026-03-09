@@ -1,0 +1,222 @@
+/* CSS RESETS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'] {
+  list-style: none;
+}
+
+h1, h2 {
+  line-height: 1.2;    /* Set shorter line heights on headings and interactive elements */
+  text-wrap: balance;  /* Balance text wrapping on headings */
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+/* FONTS */
+
+/* barlow-semi-condensed-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/barlow-semi-condensed-v16-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-semi-condensed-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/barlow-semi-condensed-v16-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* CUSTOM VARIABLES */
+
+:root {
+
+    /* COLORS */
+
+    --clr-black: hsl(0, 0%, 7%);
+    --clr-dark-blue: hsl(219, 29%, 14%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-grey-100: hsl(214, 17%, 92%);
+    --clr-grey-200: hsl(0, 0%, 81%);
+    --clr-grey-400: hsl(224, 10%, 45%);
+    --clr-grey-500: hsl(217, 19%, 35%);
+    --clr-purple-50: hsl(260, 100%, 95%);
+    --clr-purple-300: hsl(264, 82%, 70%);
+    --clr-purple-500: hsl(263, 55%, 52%);
+
+    --clr-background: hsl(300, 5%, 96%);
+    
+    /* TYPOGRAPHY */
+
+    --ff-main: "Barlow Semi Condensed", sans-serif;
+    --fs-body: .8125rem;
+    --fs-title: 1.25rem;
+    --fs-tag: .6875rem; 
+
+    /* SPACINGS */
+
+    --space-500: 2.5rem;
+    --space-400: 2rem;
+    --space-300: 1.5rem;
+    --space-200: 1rem;
+    --space-100: .5rem;
+    --space-50: .25rem;
+
+    /* BORDER-RADIUS */
+
+    --rounded-sm: 8px;
+
+    /* BOX SHADOWS */
+
+    --shadow: 40px 60px 50px -47px hsla(217, 19%, 35%, 0.25);
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100dvh;
+    padding-inline: clamp(2.1875rem, 0.6966rem + 6.3613vw, 3.75rem);
+    padding-block: clamp(4.5625rem, 3.9661rem + 2.5445vw, 5.1875rem);
+    background-color: var(--clr-background);
+    font-family: var(--ff-main);
+    font-size: var(--fs-body);
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--clr-grey-500);
+}
+
+.testimonials {
+  display: grid;
+  column-gap: var(--space-400);
+  row-gap: var(--space-400);
+  max-width: 69.625rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+  padding: var(--space-400);
+  border-radius: var(--rounded-sm);
+  box-shadow: var(--shadow);
+  background-color: var(--clr-white);
+  color: var(--clr-grey-500);
+}
+
+.card--purple {
+  background-color: var(--clr-purple-500);
+  color: var(--clr-white);
+}
+
+.card--grey {
+  background-color: var(--clr-grey-500);
+  color: var(--clr-white);
+}
+
+.card--blue {
+  background-color: var(--clr-dark-blue);
+  color: var(--clr-white);
+}
+
+.card__author-container {
+  display: flex;
+  gap: var(--space-200);
+}
+
+.card__author-img {
+  border-radius: 999px;
+}
+
+.card__author-img--bordered {
+  border: 2px solid var(--clr-purple-300);
+}
+
+.card__author-details {
+  line-height: 1.1;
+}
+
+.card__tag {
+  font-size: var(--fs-tag);
+  opacity: 0.5;
+}
+
+.card__testimonial {
+  font-size: var(--fs-title);
+  font-weight: 600;
+}
+
+.card__quote {
+  opacity: 0.7;
+}
+
+.card__quote::before {
+  content: "“ ";
+}
+
+.card__quote::after {
+  content: " ”";
+}
+
+@media screen and (min-width: 48em) {
+
+  .testimonials {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card--wide {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 64em) {
+
+  .testimonials {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card--tall {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+
+}
